@@ -89,70 +89,70 @@ stonewall
 ioengine=libaio
 direct=0
 iodepth=1
-bssplit=609499/14:2206452/14:2237163/14:2298584/28:2390716/14:2544269/14
+bssplit=660809/14:2094530/14:2154268/14:2333484/28:2452960/14:2542568/14
 
 [async-indirect-train-s32-d2]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=2
-bssplit=609499/14:2206452/14:2237163/14:2298584/28:2390716/14:2544269/14
+bssplit=660809/14:2094530/14:2154268/14:2333484/28:2452960/14:2542568/14
 
 [async-indirect-train-s32-d8]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=8
-bssplit=609499/14:2206452/14:2237163/14:2298584/28:2390716/14:2544269/14
+bssplit=660809/14:2094530/14:2154268/14:2333484/28:2452960/14:2542568/14
 
 [async-indirect-train-s32-d32]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=32
-bssplit=609499/14:2206452/14:2237163/14:2298584/28:2390716/14:2544269/14
+bssplit=660809/14:2094530/14:2154268/14:2333484/28:2452960/14:2542568/14
 
 [async-indirect-train-s32-d128]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=128
-bssplit=609499/14:2206452/14:2237163/14:2298584/28:2390716/14:2544269/14
+bssplit=660809/14:2094530/14:2154268/14:2333484/28:2452960/14:2542568/14
 
 [async-indirect-test-s32-d1]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=1
-bssplit=304198/25:2261480/25:2449680/25:2675520/25
+bssplit=332122/24:2185952/24:2578108/50
 
 [async-indirect-test-s32-d2]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=2
-bssplit=304198/25:2261480/25:2449680/25:2675520/25
+bssplit=332122/24:2185952/24:2578108/50
 
 [async-indirect-test-s32-d8]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=8
-bssplit=304198/25:2261480/25:2449680/25:2675520/25
+bssplit=332122/24:2185952/24:2578108/50
 
 [async-indirect-test-s32-d32]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=32
-bssplit=304198/25:2261480/25:2449680/25:2675520/25
+bssplit=332122/24:2185952/24:2578108/50
 
 [async-indirect-test-s32-d128]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=128
-bssplit=304198/25:2261480/25:2449680/25:2675520/25
+bssplit=332122/24:2185952/24:2578108/50
 
 [async-indirect-train-s256-d1]
 stonewall

@@ -156,7 +156,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=43390279/9:44016466/49:44642652/37:45268839/4
+bssplit=43006732/1:43624562/21:44242393/50:44860223/26
 
 [sync-test-s32-d2]
 stonewall
@@ -165,7 +165,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=43390279/9:44016466/49:44642652/37:45268839/4
+bssplit=43006732/1:43624562/21:44242393/50:44860223/26
 
 [sync-test-s32-d8]
 stonewall
@@ -174,7 +174,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=43390279/9:44016466/49:44642652/37:45268839/4
+bssplit=43006732/1:43624562/21:44242393/50:44860223/26
 
 [sync-test-s32-d32]
 stonewall
@@ -183,7 +183,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=43390279/9:44016466/49:44642652/37:45268839/4
+bssplit=43006732/1:43624562/21:44242393/50:44860223/26
 
 [sync-test-s32-d128]
 stonewall
@@ -192,7 +192,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=43390279/9:44016466/49:44642652/37:45268839/4
+bssplit=43006732/1:43624562/21:44242393/50:44860223/26
 
 [sync-train-s32-d1]
 stonewall
@@ -201,7 +201,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=149331845/1:151449912/48:153567980/50
+bssplit=151244295/35:153360966/64
 
 [sync-train-s32-d2]
 stonewall
@@ -210,7 +210,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=149331845/1:151449912/48:153567980/50
+bssplit=151244295/35:153360966/64
 
 [sync-train-s32-d8]
 stonewall
@@ -219,7 +219,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=149331845/1:151449912/48:153567980/50
+bssplit=151244295/35:153360966/64
 
 [sync-train-s32-d32]
 stonewall
@@ -228,7 +228,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=149331845/1:151449912/48:153567980/50
+bssplit=151244295/35:153360966/64
 
 [sync-train-s32-d128]
 stonewall
@@ -237,7 +237,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=149331845/1:151449912/48:153567980/50
+bssplit=151244295/35:153360966/64
 
 [sync-validate-s32-d1]
 stonewall
@@ -246,7 +246,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=42277638/1:42884633/14:43491629/45:44098625/39
+bssplit=42526611/3:43143170/32:43759729/48:44376289/15
 
 [sync-validate-s32-d2]
 stonewall
@@ -255,7 +255,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=42277638/1:42884633/14:43491629/45:44098625/39
+bssplit=42526611/3:43143170/32:43759729/48:44376289/15
 
 [sync-validate-s32-d8]
 stonewall
@@ -264,7 +264,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=42277638/1:42884633/14:43491629/45:44098625/39
+bssplit=42526611/3:43143170/32:43759729/48:44376289/15
 
 [sync-validate-s32-d32]
 stonewall
@@ -273,7 +273,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=42277638/1:42884633/14:43491629/45:44098625/39
+bssplit=42526611/3:43143170/32:43759729/48:44376289/15
 
 [sync-validate-s32-d128]
 stonewall
@@ -282,7 +282,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=42277638/1:42884633/14:43491629/45:44098625/39
+bssplit=42526611/3:43143170/32:43759729/48:44376289/15
 
 [sync-test-s256-d1]
 stonewall
@@ -291,7 +291,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=8355818/6:353833357/93
+bssplit=8336165/6:353706983/93
 
 [sync-test-s256-d2]
 stonewall
@@ -300,7 +300,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=8355818/6:353833357/93
+bssplit=8336165/6:353706983/93
 
 [sync-test-s256-d8]
 stonewall
@@ -309,7 +309,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=8355818/6:353833357/93
+bssplit=8336165/6:353706983/93
 
 [sync-test-s256-d32]
 stonewall
@@ -318,7 +318,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=8355818/6:353833357/93
+bssplit=8336165/6:353706983/93
 
 [sync-test-s256-d128]
 stonewall
@@ -327,7 +327,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=8355818/6:353833357/93
+bssplit=8336165/6:353706983/93
 
 [sync-train-s256-d1]
 stonewall
@@ -336,7 +336,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=28240922/6:1213960652/93
+bssplit=28426871/6:1213861515/93
 
 [sync-train-s256-d2]
 stonewall
@@ -345,7 +345,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=28240922/6:1213960652/93
+bssplit=28426871/6:1213861515/93
 
 [sync-train-s256-d8]
 stonewall
@@ -354,7 +354,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=28240922/6:1213960652/93
+bssplit=28426871/6:1213861515/93
 
 [sync-train-s256-d32]
 stonewall
@@ -363,7 +363,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=28240922/6:1213960652/93
+bssplit=28426871/6:1213861515/93
 
 [sync-train-s256-d128]
 stonewall
@@ -372,7 +372,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=28240922/6:1213960652/93
+bssplit=28426871/6:1213861515/93
 
 [sync-validate-s256-d1]
 stonewall
@@ -381,7 +381,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=8339168/6:344321306/6:349740373/87
+bssplit=8066025/6:348279512/93
 
 [sync-validate-s256-d2]
 stonewall
@@ -390,7 +390,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=8339168/6:344321306/6:349740373/87
+bssplit=8066025/6:348279512/93
 
 [sync-validate-s256-d8]
 stonewall
@@ -399,7 +399,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=8339168/6:344321306/6:349740373/87
+bssplit=8066025/6:348279512/93
 
 [sync-validate-s256-d32]
 stonewall
@@ -408,7 +408,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=8339168/6:344321306/6:349740373/87
+bssplit=8066025/6:348279512/93
 
 [sync-validate-s256-d128]
 stonewall
@@ -417,5 +417,5 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=8339168/6:344321306/6:349740373/87
+bssplit=8066025/6:348279512/93
 

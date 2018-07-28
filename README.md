@@ -13,18 +13,25 @@ pip3 install -r requirements.txt
 ## Run
 1. choose a set of API and workload.
 2. Set `DEVICE` environment variable to the target mount point.
-```bash
-export DEVICE=/mnt/target
-```
+    ```bash
+    export DEVICE=/mnt/target
+    ```
 3. Run the `fio`:
-```bash
-fio --output-format=json --output=OUTPUT experiments/API/WORKLOAD.fio
-```
-where `API` is the chosen API, `WORKLOAD` is the workload, and `OUTPUT` is the output file.
+    ```bash
+    fio --output-format=json --output=OUTPUT experiments/API/WORKLOAD.fio
+    ```
+    where `API` is the chosen API, `WORKLOAD` is the workload, and `OUTPUT` is the output file.
 for example for `sync` API and `imagenet` workload run:
 ```bash
 fio --output-format=json --output=results.json experiments/sync/imagenet.fio
 ```
+
+* (Alternative) 3. Run all tests by:
+    ```bash
+    export DEVICE=/mnt/target
+    bash experiments/run-all.bash
+    ```
+    The results will be stored in `results/` folder.
 
 ## API sets
 There are 4 different API sets for the benchmarks.
@@ -87,3 +94,20 @@ optional arguments:
                         List of fixed sizes in general workloads.
 
 ```
+
+## License
+Deep Learning I/O Benchmark
+Copyright (C) 2018  Sayed Hadi Hashemi.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

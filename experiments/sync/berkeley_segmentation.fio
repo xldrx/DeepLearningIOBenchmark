@@ -111,7 +111,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=619357/14:2135186/14:2331682/28:2387824/42
+bssplit=729890/14:2174954/14:2256750/14:2284016/28:2365812/14:2447608/14
 
 [sync-train-s32-d2]
 stonewall
@@ -120,7 +120,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=619357/14:2135186/14:2331682/28:2387824/42
+bssplit=729890/14:2174954/14:2256750/14:2284016/28:2365812/14:2447608/14
 
 [sync-train-s32-d8]
 stonewall
@@ -129,7 +129,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=619357/14:2135186/14:2331682/28:2387824/42
+bssplit=729890/14:2174954/14:2256750/14:2284016/28:2365812/14:2447608/14
 
 [sync-train-s32-d32]
 stonewall
@@ -138,7 +138,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=619357/14:2135186/14:2331682/28:2387824/42
+bssplit=729890/14:2174954/14:2256750/14:2284016/28:2365812/14:2447608/14
 
 [sync-train-s32-d128]
 stonewall
@@ -147,7 +147,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=619357/14:2135186/14:2331682/28:2387824/42
+bssplit=729890/14:2174954/14:2256750/14:2284016/28:2365812/14:2447608/14
 
 [sync-test-s32-d1]
 stonewall
@@ -156,7 +156,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=0
-bssplit=337921/25:2374122/25:2409229/25:2549657/25
+bssplit=356013/25:2407665/25:2441859/25:2510247/25
 
 [sync-test-s32-d2]
 stonewall
@@ -165,7 +165,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=0
-bssplit=337921/25:2374122/25:2409229/25:2549657/25
+bssplit=356013/25:2407665/25:2441859/25:2510247/25
 
 [sync-test-s32-d8]
 stonewall
@@ -174,7 +174,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=0
-bssplit=337921/25:2374122/25:2409229/25:2549657/25
+bssplit=356013/25:2407665/25:2441859/25:2510247/25
 
 [sync-test-s32-d32]
 stonewall
@@ -183,7 +183,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=0
-bssplit=337921/25:2374122/25:2409229/25:2549657/25
+bssplit=356013/25:2407665/25:2441859/25:2510247/25
 
 [sync-test-s32-d128]
 stonewall
@@ -192,7 +192,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=0
-bssplit=337921/25:2374122/25:2409229/25:2549657/25
+bssplit=356013/25:2407665/25:2441859/25:2510247/25
 
 [sync-train-s256-d1]
 stonewall

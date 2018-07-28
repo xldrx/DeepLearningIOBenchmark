@@ -1,5 +1,21 @@
 #! /usr/bin/env python -u
 # coding=utf-8
+
+# Deep Learning I/O Benchmark
+# Copyright (C) 2018  Sayed Hadi Hashemi
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import argparse
 import json
 import os
@@ -43,6 +59,16 @@ class FioRunBase:
             os.mkdir(os.path.dirname(file_name))
         with open(file_name, 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
+
+        result_file_name = 'results/%s.json' % self.name
+        if not os.path.exists(os.path.dirname(result_file_name)):
+            os.mkdir(os.path.dirname(result_file_name))
+
+        with open("experiments/run-all.bash", 'a') as script_file:
+            script_file.write("echo\necho Running {}\n".format(self.name))
+            script_file.write(
+                "${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}\n".format(
+                    test_file_name=file_name, result_file_name=result_file_name))
 
 
 class FioRun(FioRunBase):
@@ -273,6 +299,9 @@ def parse_args():
 
 if __name__ == '__main__':
     parse_args()
+
+    with open("experiments/run-all.bash", 'w') as script_file:
+        script_file.write("#!/usr/bin/env bash\n")
 
     FioGeneralExperiment().generate_experiment()
     for dataset in FioDatasetExperiment.list_datasets():

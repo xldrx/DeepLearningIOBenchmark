@@ -111,7 +111,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=1
-bssplit=687182/14:2205731/28:2288561/14:2316171/14:2426611/28
+bssplit=651559/14:2227034/14:2309954/42:2365234/14:2392874/14
 
 [sync-direct-train-s32-d2]
 stonewall
@@ -120,7 +120,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=1
-bssplit=687182/14:2205731/28:2288561/14:2316171/14:2426611/28
+bssplit=651559/14:2227034/14:2309954/42:2365234/14:2392874/14
 
 [sync-direct-train-s32-d8]
 stonewall
@@ -129,7 +129,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=1
-bssplit=687182/14:2205731/28:2288561/14:2316171/14:2426611/28
+bssplit=651559/14:2227034/14:2309954/42:2365234/14:2392874/14
 
 [sync-direct-train-s32-d32]
 stonewall
@@ -138,7 +138,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=1
-bssplit=687182/14:2205731/28:2288561/14:2316171/14:2426611/28
+bssplit=651559/14:2227034/14:2309954/42:2365234/14:2392874/14
 
 [sync-direct-train-s32-d128]
 stonewall
@@ -147,7 +147,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=1
-bssplit=687182/14:2205731/28:2288561/14:2316171/14:2426611/28
+bssplit=651559/14:2227034/14:2309954/42:2365234/14:2392874/14
 
 [sync-direct-test-s32-d1]
 stonewall
@@ -156,7 +156,7 @@ group_reporting=1
 thread=1
 numjobs=1
 direct=1
-bssplit=268027/25:2448177/25:2483917/25:2519657/25
+bssplit=346494/25:2370381/25:2440170/25:2544854/25
 
 [sync-direct-test-s32-d2]
 stonewall
@@ -165,7 +165,7 @@ group_reporting=1
 thread=1
 numjobs=2
 direct=1
-bssplit=268027/25:2448177/25:2483917/25:2519657/25
+bssplit=346494/25:2370381/25:2440170/25:2544854/25
 
 [sync-direct-test-s32-d8]
 stonewall
@@ -174,7 +174,7 @@ group_reporting=1
 thread=1
 numjobs=8
 direct=1
-bssplit=268027/25:2448177/25:2483917/25:2519657/25
+bssplit=346494/25:2370381/25:2440170/25:2544854/25
 
 [sync-direct-test-s32-d32]
 stonewall
@@ -183,7 +183,7 @@ group_reporting=1
 thread=1
 numjobs=32
 direct=1
-bssplit=268027/25:2448177/25:2483917/25:2519657/25
+bssplit=346494/25:2370381/25:2440170/25:2544854/25
 
 [sync-direct-test-s32-d128]
 stonewall
@@ -192,7 +192,7 @@ group_reporting=1
 thread=1
 numjobs=128
 direct=1
-bssplit=268027/25:2448177/25:2483917/25:2519657/25
+bssplit=346494/25:2370381/25:2440170/25:2544854/25
 
 [sync-direct-train-s256-d1]
 stonewall
