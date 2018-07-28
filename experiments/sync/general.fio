@@ -12,6 +12,7 @@ ramp_time=5
 disk_util=1
 bssplit=128k/1
 rw=randread
+size=256g
 
 [sync-d1-s64]
 stonewall
@@ -19,7 +20,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=64/1
+
+[sync-d2-s64]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=64/1
 
 [sync-d8-s64]
@@ -28,7 +38,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=64/1
 
 [sync-d32-s64]
@@ -37,16 +47,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=64/1
 
-[sync-d512-s64]
+[sync-d128-s64]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=64/1
 
 [sync-d1-s256]
@@ -55,7 +65,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=256/1
+
+[sync-d2-s256]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=256/1
 
 [sync-d8-s256]
@@ -64,7 +83,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=256/1
 
 [sync-d32-s256]
@@ -73,16 +92,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=256/1
 
-[sync-d512-s256]
+[sync-d128-s256]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=256/1
 
 [sync-d1-s1024]
@@ -91,7 +110,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=1024/1
+
+[sync-d2-s1024]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=1024/1
 
 [sync-d8-s1024]
@@ -100,7 +128,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=1024/1
 
 [sync-d32-s1024]
@@ -109,16 +137,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=1024/1
 
-[sync-d512-s1024]
+[sync-d128-s1024]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=1024/1
 
 [sync-d1-s4096]
@@ -127,7 +155,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=4096/1
+
+[sync-d2-s4096]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=4096/1
 
 [sync-d8-s4096]
@@ -136,7 +173,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=4096/1
 
 [sync-d32-s4096]
@@ -145,16 +182,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=4096/1
 
-[sync-d512-s4096]
+[sync-d128-s4096]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=4096/1
 
 [sync-d1-s32768]
@@ -163,7 +200,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=32768/1
+
+[sync-d2-s32768]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=32768/1
 
 [sync-d8-s32768]
@@ -172,7 +218,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=32768/1
 
 [sync-d32-s32768]
@@ -181,16 +227,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=32768/1
 
-[sync-d512-s32768]
+[sync-d128-s32768]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=32768/1
 
 [sync-d1-s262144]
@@ -199,7 +245,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=262144/1
+
+[sync-d2-s262144]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=262144/1
 
 [sync-d8-s262144]
@@ -208,7 +263,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=262144/1
 
 [sync-d32-s262144]
@@ -217,16 +272,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=262144/1
 
-[sync-d512-s262144]
+[sync-d128-s262144]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=262144/1
 
 [sync-d1-s4294967296]
@@ -235,7 +290,16 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=1
-direct=1
+direct=0
+bssplit=4294967296/1
+
+[sync-d2-s4294967296]
+stonewall
+ioengine=sync
+group_reporting=1
+thread=1
+numjobs=2
+direct=0
 bssplit=4294967296/1
 
 [sync-d8-s4294967296]
@@ -244,7 +308,7 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=8
-direct=1
+direct=0
 bssplit=4294967296/1
 
 [sync-d32-s4294967296]
@@ -253,15 +317,15 @@ ioengine=sync
 group_reporting=1
 thread=1
 numjobs=32
-direct=1
+direct=0
 bssplit=4294967296/1
 
-[sync-d512-s4294967296]
+[sync-d128-s4294967296]
 stonewall
 ioengine=sync
 group_reporting=1
 thread=1
-numjobs=512
-direct=1
+numjobs=128
+direct=0
 bssplit=4294967296/1
 

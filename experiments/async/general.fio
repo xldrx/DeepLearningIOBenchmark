@@ -12,12 +12,20 @@ ramp_time=5
 disk_util=1
 bssplit=128k/1
 rw=randread
+size=256g
 
 [async-d1-s64]
 stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=64/1
+
+[async-d2-s64]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=64/1
 
 [async-d8-s64]
@@ -34,11 +42,11 @@ direct=1
 iodepth=32
 bssplit=64/1
 
-[async-d512-s64]
+[async-d128-s64]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=64/1
 
 [async-d1-s256]
@@ -46,6 +54,13 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=256/1
+
+[async-d2-s256]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=256/1
 
 [async-d8-s256]
@@ -62,11 +77,11 @@ direct=1
 iodepth=32
 bssplit=256/1
 
-[async-d512-s256]
+[async-d128-s256]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=256/1
 
 [async-d1-s1024]
@@ -74,6 +89,13 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=1024/1
+
+[async-d2-s1024]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=1024/1
 
 [async-d8-s1024]
@@ -90,11 +112,11 @@ direct=1
 iodepth=32
 bssplit=1024/1
 
-[async-d512-s1024]
+[async-d128-s1024]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=1024/1
 
 [async-d1-s4096]
@@ -102,6 +124,13 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=4096/1
+
+[async-d2-s4096]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=4096/1
 
 [async-d8-s4096]
@@ -118,11 +147,11 @@ direct=1
 iodepth=32
 bssplit=4096/1
 
-[async-d512-s4096]
+[async-d128-s4096]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=4096/1
 
 [async-d1-s32768]
@@ -130,6 +159,13 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=32768/1
+
+[async-d2-s32768]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=32768/1
 
 [async-d8-s32768]
@@ -146,11 +182,11 @@ direct=1
 iodepth=32
 bssplit=32768/1
 
-[async-d512-s32768]
+[async-d128-s32768]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=32768/1
 
 [async-d1-s262144]
@@ -158,6 +194,13 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=262144/1
+
+[async-d2-s262144]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=262144/1
 
 [async-d8-s262144]
@@ -174,11 +217,11 @@ direct=1
 iodepth=32
 bssplit=262144/1
 
-[async-d512-s262144]
+[async-d128-s262144]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=262144/1
 
 [async-d1-s4294967296]
@@ -186,6 +229,13 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
+bssplit=4294967296/1
+
+[async-d2-s4294967296]
+stonewall
+ioengine=libaio
+direct=1
+iodepth=2
 bssplit=4294967296/1
 
 [async-d8-s4294967296]
@@ -202,10 +252,10 @@ direct=1
 iodepth=32
 bssplit=4294967296/1
 
-[async-d512-s4294967296]
+[async-d128-s4294967296]
 stonewall
 ioengine=libaio
 direct=1
-iodepth=512
+iodepth=128
 bssplit=4294967296/1
 
