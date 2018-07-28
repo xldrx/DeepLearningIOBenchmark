@@ -5,9 +5,9 @@ The goal of this project is to simulate a deep learning training job load on a s
 * `fio`. It has been tested on `3.8`.
 * `Python 3`. Tested on `3.6`.
 * packages in `requirements.txt`. Install by:
-```bash
-pip3 install -r requirements.txt
-```
+    ```bash
+    pip3 install -r requirements.txt
+    ```
 
 
 ## Run
@@ -21,10 +21,10 @@ pip3 install -r requirements.txt
     fio --output-format=json --output=OUTPUT experiments/API/WORKLOAD.fio
     ```
     where `API` is the chosen API, `WORKLOAD` is the workload, and `OUTPUT` is the output file.
-for example for `sync` API and `imagenet` workload run:
-```bash
-fio --output-format=json --output=results.json experiments/sync/imagenet.fio
-```
+    for example for `sync` API and `imagenet` workload run:
+    ```bash
+    fio --output-format=json --output=results.json experiments/sync/imagenet.fio
+    ```
 
 * (Alternative) 3. Run all tests by:
     ```bash
@@ -60,20 +60,20 @@ The following datasets are included in this suite:
  
 # Notes
 * Make sure the data is not cached in memory before running any benchmark. To flush the cache run the following as `root`:
-```bash
-free && sync && echo 3 > /proc/sys/vm/drop_caches && free
-```
+    ```bash
+    free && sync && echo 3 > /proc/sys/vm/drop_caches && free
+    ```
 * Make the total data size is large enough (at least 10 times the size of memory) while still fit on the disk. By default, this value is `256GB`. If you need to change this value, generate new benchmarks by running:
-```bash
-python3 dio/generate_fio.py --total_size=256g
-``` 
+    ```bash
+    python3 dio/generate_fio.py --total_size=256g
+    ``` 
 
 ## Add a Custom Workload
 1. Add a stat file to `dataset-stats` folder. The name of the file should be in form of `stat_DATASET.json` where DATASET is the name of the dataset. See `dataset-stats/stat_imagenet.json` to learn about the structure of stats files.
 2. generate new benchmarks by running:
-```bash
-python3 dio/generate_fio.py
-``` 
+    ```bash
+    python3 dio/generate_fio.py
+    ``` 
 
 ## Advance Options
 ```bash
