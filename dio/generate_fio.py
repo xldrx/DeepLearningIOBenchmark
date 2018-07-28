@@ -61,11 +61,11 @@ class FioRunBase:
             config.write(configfile, space_around_delimiters=False)
 
         result_file_name = 'results/%s.json' % self.name
-        if not os.path.exists(os.path.dirname(result_file_name)):
-            os.mkdir(os.path.dirname(result_file_name))
+        result_folder = os.path.dirname(result_file_name)
 
         with open("experiments/run-all.bash", 'a') as script_file:
             script_file.write("echo\necho Running {}\n".format(self.name))
+            script_file.write("mkdir -p {}\n".format(result_folder))
             script_file.write(
                 "${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}\n".format(
                     test_file_name=file_name, result_file_name=result_file_name))
