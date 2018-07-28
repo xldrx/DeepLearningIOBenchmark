@@ -1,18 +1,16 @@
 [global]
 directory=${DEVICE}
-filename_format=data-$filenum.bin
+filename=data.bin
 thread=1
 time_based=1
 runtime=30s
 invalidate=1
-nrfiles=1
 filesize=256g
 fadvise_hint=1
 ramp_time=5
 disk_util=1
 bssplit=128k/1
 rw=randread
-size=256g
 
 [async-indirect-train-s1-d1]
 stonewall
@@ -89,70 +87,70 @@ stonewall
 ioengine=libaio
 direct=0
 iodepth=1
-bssplit=630508/14:2190294/14:2248064/28:2305833/14:2450258/28
+bssplit=578650/14:2211870/14:2242115/14:2332849/14:2363094/28:2484073/14
 
 [async-indirect-train-s32-d2]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=2
-bssplit=630508/14:2190294/14:2248064/28:2305833/14:2450258/28
+bssplit=578650/14:2211870/14:2242115/14:2332849/14:2363094/28:2484073/14
 
 [async-indirect-train-s32-d8]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=8
-bssplit=630508/14:2190294/14:2248064/28:2305833/14:2450258/28
+bssplit=578650/14:2211870/14:2242115/14:2332849/14:2363094/28:2484073/14
 
 [async-indirect-train-s32-d32]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=32
-bssplit=630508/14:2190294/14:2248064/28:2305833/14:2450258/28
+bssplit=578650/14:2211870/14:2242115/14:2332849/14:2363094/28:2484073/14
 
 [async-indirect-train-s32-d128]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=128
-bssplit=630508/14:2190294/14:2248064/28:2305833/14:2450258/28
+bssplit=578650/14:2211870/14:2242115/14:2332849/14:2363094/28:2484073/14
 
 [async-indirect-test-s32-d1]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=1
-bssplit=339285/25:2347994/25:2486526/25:2521159/25
+bssplit=381106/25:2355247/25:2455627/25:2489087/25
 
 [async-indirect-test-s32-d2]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=2
-bssplit=339285/25:2347994/25:2486526/25:2521159/25
+bssplit=381106/25:2355247/25:2455627/25:2489087/25
 
 [async-indirect-test-s32-d8]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=8
-bssplit=339285/25:2347994/25:2486526/25:2521159/25
+bssplit=381106/25:2355247/25:2455627/25:2489087/25
 
 [async-indirect-test-s32-d32]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=32
-bssplit=339285/25:2347994/25:2486526/25:2521159/25
+bssplit=381106/25:2355247/25:2455627/25:2489087/25
 
 [async-indirect-test-s32-d128]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=128
-bssplit=339285/25:2347994/25:2486526/25:2521159/25
+bssplit=381106/25:2355247/25:2455627/25:2489087/25
 
 [async-indirect-train-s256-d1]
 stonewall

@@ -75,12 +75,11 @@ class FioRun(FioRunBase):
     total_size = "256g"
     global_configurations = {
         "directory": "${DEVICE}",
-        "filename_format": "data-$filenum.bin",
+        "filename": "data.bin",
         "thread": "1",
         "time_based": "1",
         "runtime": "30s",
         "invalidate": "1",
-        "nrfiles": "1",
         "filesize": "256g",
         "fadvise_hint": "1",
         "ramp_time": "5",
@@ -107,7 +106,6 @@ class FioRun(FioRunBase):
     def __init__(self, name, **kwargs):
         super().__init__(name, **kwargs)
         self.global_configurations["filesize"] = self.total_size
-        self.global_configurations["size"] = self.total_size
 
     def _add_sync(self, name, stonewall=True, depth=1, **kwargs):
         experiment = self.sync_configurations.copy()
@@ -278,7 +276,7 @@ def parse_args():
         type=int,
         nargs='+',
         help="List of fixed sizes in general workloads.",
-        default=[64, 256, 1024, 4096, 32768, 262144, 2 ** 32],
+        default=[256, 1024, 4096, 32768, 262144, 2 ** 32],
         required=False
     )
 
