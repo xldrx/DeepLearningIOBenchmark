@@ -76,7 +76,7 @@ The following datasets are included in this suite:
     ``` 
 
 ## Advance Options
-```bash
+```text
 python3 dio/generate_fio.py -h
 usage: generate_fio.py [-h] [--total_size TOTAL_SIZE]
                        [--depths DEPTHS [DEPTHS ...]] [--seqs SEQS [SEQS ...]]
