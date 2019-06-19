@@ -65,7 +65,7 @@ The following datasets are included in this suite:
     ```
 * Make the total data size is large enough (at least 10 times the size of memory) while still fit on the disk. By default, this value is `256GB`. If you need to change this value, generate new benchmarks by running:
     ```bash
-    python3 dio/generate_fio.py --total_size=256g
+    python3 -m dio --total_size=256g
     ``` 
 
 ## Add a Custom Workload
@@ -92,7 +92,8 @@ optional arguments:
                         List of sequence file sizes in dataset workloads.
   --sizes SIZES [SIZES ...]
                         List of fixed sizes in general workloads.
-
+  --apis APIS [APIS ...]
+                        List of APIs to test.
 ```
 
 ## License

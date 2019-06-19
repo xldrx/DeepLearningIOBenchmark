@@ -45,12 +45,13 @@ run_mpi_script_path = "experiments/run-mpi.bash"
 
 mpi_bootstrap_script_body = """
 export DEVICE=${{DEVICE}}/r${{OMPI_COMM_WORLD_RANK}}
-export OUTPUT_PATH={result_path}/r${{OMPI_COMM_WORLD_RANK}}
+export OUTPUT_PATH=mpi_results/r${{OMPI_COMM_WORLD_RANK}}/{result_path}
+export OUTPUT_FILE=mpi_results/r${{OMPI_COMM_WORLD_RANK}}/{result_file_name}
 
-mkdir -p ${{DEVICE}}
+export DEVICE=${{DEVICE}}/r${{OMPI_COMM_WORLD_RANK}}
 mkdir -p ${{OUTPUT_PATH}}
 
-${{FIO:=fio}} --output-format=json --output=${{OUTPUT_PATH}} {test_file_name}
+${{FIO:=fio}} --output-format=json --output=${{OUTPUT_FILE}} {test_file_name}
 """
 
 run_all_script_body = """

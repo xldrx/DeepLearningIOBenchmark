@@ -117,7 +117,7 @@ class FioExperimentBase(ABC):
             self.run_scripts = []
 
     def generate_experiment(self):
-        raise NotImplemented()
+        raise NotImplementedError()
 
 
 class FioGeneralExperiment(FioExperimentBase):
@@ -235,10 +235,10 @@ class ScriptFileBase(ABC):
             self._add_test(fp, *args, **kwargs)
 
     def _begin(self, fp):
-        raise NotImplemented()
+        raise NotImplementedError()
 
     def _add_test(self, fp, *args, **kwargs):
-        raise NotImplemented()
+        raise NotImplementedError()
 
 
 class RunAllScript(ScriptFileBase):
@@ -286,7 +286,7 @@ class RunMPIScript(ScriptFileBase):
                                        result_path=result_path,
                                        result_file_name=result_file_name)
 
-        fp.write("${{MPIRUN:=mpirun}} ${{MPI_ARGS}} ${{SCRIPTPATH}}/{test_bootstrap_path}\n".format(
+        fp.write("${{MPIRUN:=mpirun}} ${{MPI_ARGS}} bash ${{SCRIPTPATH}}/{test_bootstrap_path}\n".format(
             test_bootstrap_path=test_bootstrap_path))
 
 
@@ -327,24 +327,35 @@ def parse_args():
         required=False
     )
 
+    parser.add_argument(
+        "--apis",
+        type=str,
+        nargs='+',
+        help="List of APIs to test.",
+        default=["sync", "async", "sync-direct", "async-indirect"],
+        required=False
+    )
+
     FLAGS, unparsed = parser.parse_known_args()
 
     if unparsed:
         print("Unknown argument:", unparsed)
         exit(1)
 
-    FioRun.total_size = FLAGS.total_size
-
-    FioGeneralExperiment.depths = FLAGS.depths
-    FioGeneralExperiment.sizes = FLAGS.sizes
-
-    FioDatasetExperiment.depths = FLAGS.depths
-    FioDatasetExperiment.sequence_sizes = FLAGS.seqs
+    defaults.total_size = FLAGS.total_size
+    defaults.depths = FLAGS.depths
+    defaults.sizes = FLAGS.sizes
+    defaults.sequence_sizes = FLAGS.seqs
+    defaults.apis = FLAGS.apis
 
 
-if __name__ == '__main__':
+def main():
     parse_args()
     scripts = [RunAllScript(defaults.run_all_script_path), RunMPIScript(defaults.run_mpi_script_path)]
     FioGeneralExperiment(run_scripts=scripts).generate_experiment()
     for dataset in FioDatasetExperiment.list_datasets():
         FioDatasetExperiment(dataset_name=dataset, run_scripts=scripts).generate_experiment()
+
+
+if __name__ == "__main__":
+    raise NotImplementedError()
