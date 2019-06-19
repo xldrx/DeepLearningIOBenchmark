@@ -23,7 +23,7 @@ sync_configurations = {
     "ioengine": "sync",
     "group_reporting": "1",
     "thread": "1",
-    # "norandommap" : 1,
+    "norandommap": 1,
     "numjobs": 1,
     "direct": 1
 }
@@ -48,7 +48,7 @@ export DEVICE=${{DEVICE}}/r${{OMPI_COMM_WORLD_RANK}}
 export OUTPUT_PATH=mpi_results/r${{OMPI_COMM_WORLD_RANK}}/{result_path}
 export OUTPUT_FILE=mpi_results/r${{OMPI_COMM_WORLD_RANK}}/{result_file_name}
 
-export DEVICE=${{DEVICE}}/r${{OMPI_COMM_WORLD_RANK}}
+mkdir -p ${{DEVICE}}
 mkdir -p ${{OUTPUT_PATH}}
 
 ${{FIO:=fio}} --output-format=json --output=${{OUTPUT_FILE}} {test_file_name}
