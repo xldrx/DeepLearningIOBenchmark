@@ -34,10 +34,9 @@ __author__ = 'Sayed Hadi Hashemi'
 
 
 class FioRunBase:
-    global_configurations = {}
-
     def __init__(self, name, **kwargs):
         super().__init__()
+        self.global_configurations = defaults.global_configurations.copy()
         self.global_configurations.update(kwargs)
         self.tests = OrderedDict()
         self.name = name
