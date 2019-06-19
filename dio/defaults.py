@@ -40,4 +40,4 @@ apis = ["sync", "async", "sync-direct", "async-indirect"]
 
 sequence_sizes = [1, 32, 256]
 
-run_all_path = "experiments/run-all.bash"
+run_all_script_path = "experiments/run-all.bash"

@@ -20,6 +20,7 @@ import argparse
 import json
 import os
 import re
+from abc import ABC
 from collections import OrderedDict
 from configparser import ConfigParser
 import numpy as np
@@ -50,7 +51,7 @@ class FioRunBase:
         if values:
             config[name] = values
 
-    def generate_config_file(self):
+    def generate_config_file(self, run_scripts):
         config = ConfigParser(allow_no_value=True)
         self._add_section(config, "global", self.global_configurations)
         for name, test in self.tests.items():
@@ -64,12 +65,11 @@ class FioRunBase:
         result_file_name = 'results/%s.json' % self.name
         result_folder = os.path.dirname(result_file_name)
 
-        with open(defaults.run_all_path, 'a') as script_file:
-            script_file.write("echo\necho Running {}\n".format(self.name))
-            script_file.write("mkdir -p {}\n".format(result_folder))
-            script_file.write(
-                "${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}\n".format(
-                    test_file_name=file_name, result_file_name=result_file_name))
+        for script in run_scripts:
+            script.add_test(test_name=self.name,
+                            test_file_name=file_name,
+                            result_path=result_folder,
+                            result_file_name=result_file_name)
 
 
 class FioRun(FioRunBase):
@@ -106,9 +106,20 @@ class FioRun(FioRunBase):
             raise Exception("API is not found: {}".format(api))
 
 
-class FioGeneralExperiment:
-    def __init__(self) -> None:
-        super().__init__()
+class FioExperimentBase(ABC):
+    def __init__(self, *, run_scripts=None):
+        if run_scripts:
+            self.run_scripts = run_scripts
+        else:
+            self.run_scripts = []
+
+    def generate_experiment(self):
+        raise NotImplemented()
+
+
+class FioGeneralExperiment(FioExperimentBase):
+    def __init__(self, *, run_scripts=None):
+        super().__init__(run_scripts=run_scripts)
 
     def generate_experiment(self):
         runs = []
@@ -123,15 +134,16 @@ class FioGeneralExperiment:
                             depth=depth,
                             bssplit="{}/1".format(size)
                             )
-            run.generate_config_file()
+            run.generate_config_file(self.run_scripts)
             print(run.name)
             runs.append(run)
 
 
-class FioDatasetExperiment:
-    def __init__(self, dataset_name, dataset_file=None) -> None:
-        super().__init__()
+class FioDatasetExperiment(FioExperimentBase):
+    def __init__(self, dataset_name, dataset_file=None, *, run_scripts=None) -> None:
+        super().__init__(run_scripts=run_scripts)
         self.dataset_name = dataset_name
+
         if dataset_file:
             self.dataset_file = dataset_file
         else:
@@ -191,7 +203,7 @@ class FioDatasetExperiment:
                             depth=depth,
                             bssplit=self.get_bssplit(dist)
                         )
-            run.generate_config_file()
+            run.generate_config_file(self.run_scripts)
             print(run.name)
             runs.append(run)
 
@@ -203,6 +215,38 @@ class FioDatasetExperiment:
             if ds:
                 ret.append(ds[0])
         return ret
+
+
+class ScriptFileBase(ABC):
+    def __init__(self, filename):
+        self._filename = filename
+        with open(self._filename, "w") as fp:
+            self._begin(fp)
+
+    def add_test(self, *args, **kwargs):
+        with open(self._filename, "a") as fp:
+            self._add_test(fp, *args, **kwargs)
+
+    def _begin(self, fp):
+        raise NotImplemented()
+
+    def _add_test(self, fp, *args, **kwargs):
+        raise NotImplemented()
+
+
+class RunAllScript(ScriptFileBase):
+    def __init__(self, filename):
+        super().__init__(filename)
+
+    def _begin(self, fp, *args, **kwargs):
+        fp.write("#!/usr/bin/env bash\n")
+
+    def _add_test(self, fp, *, test_name, test_file_name, result_path, result_file_name):
+        fp.write("echo\necho Running {}\n".format(test_name))
+        fp.write("mkdir -p {}\n".format(result_path))
+        fp.write(
+            "${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}\n".format(
+                test_file_name=test_file_name, result_file_name=result_file_name))
 
 
 def parse_args():
@@ -259,10 +303,7 @@ def parse_args():
 
 if __name__ == '__main__':
     parse_args()
-
-    with open(defaults.run_all_path, 'w') as script_file:
-        script_file.write("#!/usr/bin/env bash\n")
-
-    FioGeneralExperiment().generate_experiment()
+    scripts = [RunAllScript(defaults.run_all_script_path)]
+    FioGeneralExperiment(run_scripts=scripts).generate_experiment()
     for dataset in FioDatasetExperiment.list_datasets():
-        FioDatasetExperiment(dataset_name=dataset).generate_experiment()
+        FioDatasetExperiment(dataset_name=dataset, run_scripts=scripts).generate_experiment()
