@@ -252,6 +252,7 @@ class RunAllScript(ScriptFileBase):
             test_name=test_name, test_file_name=test_file_name, result_path=result_path,
             result_file_name=result_file_name))
 
+
 class MPIBootstrapScript(ScriptFileBase):
     def __init__(self, filename):
         super().__init__(filename)
@@ -259,9 +260,10 @@ class MPIBootstrapScript(ScriptFileBase):
     def _begin(self, fp, *args, **kwargs):
         fp.write("#!/usr/bin/env bash\n")
 
-    def _add_test(self, fp, *, test_file_name, result_path, result_file_name):
+    def _add_test(self, fp, *, test_name, test_file_name, result_path, result_file_name):
         fp.write(defaults.mpi_bootstrap_script_body.format(
-            test_file_name=test_file_name, result_path=result_path, result_file_name=result_file_name
+            test_name=test_name, test_file_name=test_file_name, result_path=result_path,
+            result_file_name=result_file_name
         ))
 
 
@@ -281,7 +283,8 @@ class RunMPIScript(ScriptFileBase):
         test_bootstrap_script = MPIBootstrapScript(
             os.path.join(os.path.dirname(self._filename), test_bootstrap_path))
 
-        test_bootstrap_script.add_test(test_file_name=test_file_name,
+        test_bootstrap_script.add_test(test_name=test_name,
+                                       test_file_name=test_file_name,
                                        result_path=result_path,
                                        result_file_name=result_file_name)
 
