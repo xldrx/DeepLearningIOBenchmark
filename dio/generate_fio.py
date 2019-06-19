@@ -24,6 +24,7 @@ from collections import OrderedDict
 from configparser import ConfigParser
 import numpy as np
 import random
+from dio import defaults
 
 __author__ = 'Sayed Hadi Hashemi'
 
@@ -63,7 +64,7 @@ class FioRunBase:
         result_file_name = 'results/%s.json' % self.name
         result_folder = os.path.dirname(result_file_name)
 
-        with open("experiments/run-all.bash", 'a') as script_file:
+        with open(defaults.run_all_path, 'a') as script_file:
             script_file.write("echo\necho Running {}\n".format(self.name))
             script_file.write("mkdir -p {}\n".format(result_folder))
             script_file.write(
@@ -72,49 +73,18 @@ class FioRunBase:
 
 
 class FioRun(FioRunBase):
-    total_size = "256g"
-    global_configurations = {
-        "directory": "${DEVICE}",
-        "filename": "data.bin",
-        "thread": "1",
-        "time_based": "1",
-        "runtime": "30s",
-        "invalidate": "1",
-        "filesize": "256g",
-        "fadvise_hint": "1",
-        "ramp_time": "5",
-        "disk_util": "1",
-        "bssplit": "128k/1",
-        "rw": "randread"
-    }
-
-    sync_configurations = {
-        "ioengine": "sync",
-        "group_reporting": "1",
-        "thread": "1",
-        # "norandommap" : 1,
-        "numjobs": 1,
-        "direct": 1
-    }
-
-    async_configurations = {
-        "ioengine": "libaio",
-        "direct": 1,
-        "iodepth": 1
-    }
-
     def __init__(self, name, **kwargs):
         super().__init__(name, **kwargs)
-        self.global_configurations["filesize"] = self.total_size
+        self.global_configurations["filesize"] = defaults.total_size
 
     def _add_sync(self, name, stonewall=True, depth=1, **kwargs):
-        experiment = self.sync_configurations.copy()
+        experiment = defaults.sync_configurations.copy()
         experiment["numjobs"] = depth
         experiment.update(kwargs)
         self.add_test(name, stonewall, **experiment)
 
     def _add_async(self, name, stonewall=True, depth=1, **kwargs):
-        experiment = self.async_configurations.copy()
+        experiment = defaults.async_configurations.copy()
         experiment["iodepth"] = depth
         experiment.update(kwargs)
         self.add_test(name, stonewall, **experiment)
@@ -137,21 +107,17 @@ class FioRun(FioRunBase):
 
 
 class FioGeneralExperiment:
-    depths = [1, 8, 32, 128]
-    sizes = [64, 256, 1024, 4096, 32768, 262144, 2 ** 32]
-    apis = ["sync", "async", "sync-direct", "async-indirect"]
-
     def __init__(self) -> None:
         super().__init__()
 
     def generate_experiment(self):
         runs = []
-        for api in self.apis:
+        for api in defaults.apis:
             name = "{}/general".format(api)
             run = FioRun(name=name)
 
-            for size in self.sizes:
-                for depth in self.depths:
+            for size in defaults.sizes:
+                for depth in defaults.depths:
                     run.add("{api}-d{depth}-s{size}".format(api=api, depth=depth, size=size),
                             api=api,
                             depth=depth,
@@ -163,10 +129,6 @@ class FioGeneralExperiment:
 
 
 class FioDatasetExperiment:
-    depths = [1, 2, 8, 32, 128]
-    sequence_sizes = [1, 32, 256]
-    apis = ["sync", "async", "sync-direct", "async-indirect"]
-
     def __init__(self, dataset_name, dataset_file=None) -> None:
         super().__init__()
         self.dataset_name = dataset_name
@@ -215,14 +177,14 @@ class FioDatasetExperiment:
 
     def generate_experiment(self):
         runs = []
-        for api in self.apis:
+        for api in defaults.apis:
             name = "{}/{}".format(api, self.dataset_name)
             run = FioRun(name=name)
 
-            for sequence_size in self.sequence_sizes:
+            for sequence_size in defaults.sequence_sizes:
                 mix = self.get_dataset_mix(sequence_size)
                 for mix_name, dist in mix.items():
-                    for depth in self.depths:
+                    for depth in defaults.depths:
                         run.add("{api}-{mix}-s{sequence_size}-d{depth}".format(
                             mix=mix_name, api=api, depth=depth, sequence_size=sequence_size),
                             api=api,
@@ -298,7 +260,7 @@ def parse_args():
 if __name__ == '__main__':
     parse_args()
 
-    with open("experiments/run-all.bash", 'w') as script_file:
+    with open(defaults.run_all_path, 'w') as script_file:
         script_file.write("#!/usr/bin/env bash\n")
 
     FioGeneralExperiment().generate_experiment()
