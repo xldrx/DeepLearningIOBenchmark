@@ -51,9 +51,9 @@ export OUTPUT_FILE={result_file_name}.r${{OMPI_COMM_WORLD_RANK}}
 mkdir -p ${{DEVICE}}
 mkdir -p ${{OUTPUT_PATH}}
 
-echo \tRunning {test_name}[r${{OMPI_COMM_WORLD_RANK}}]
+echo ----Running {test_name}[r${{OMPI_COMM_WORLD_RANK}}]
 ${{FIO:=fio}} --output-format=json --output=${{OUTPUT_FILE}} {test_file_name}
-echo \tDone {test_name}[r${{OMPI_COMM_WORLD_RANK}}]
+echo ----Done {test_name}[r${{OMPI_COMM_WORLD_RANK}}]
 """
 
 run_all_script_body = """
