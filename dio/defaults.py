@@ -41,3 +41,15 @@ apis = ["sync", "async", "sync-direct", "async-indirect"]
 sequence_sizes = [1, 32, 256]
 
 run_all_script_path = "experiments/run-all.bash"
+run_mpi_script_path = "experiments/run-mpi.bash"
+
+mpi_bootstrap_script_body = """
+export DEVICE=${{DEVICE}}/r${{OMPI_COMM_WORLD_RANK}}
+export OUTPUT_PATH={result_path}/r${{OMPI_COMM_WORLD_RANK}}
+
+mkdir -p ${{DEVICE}}
+mkdir -p ${{OUTPUT_PATH}}
+
+${{FIO:=fio}} --output-format=json --output=${{OUTPUT_PATH}} {test_file_name}
+"""
+

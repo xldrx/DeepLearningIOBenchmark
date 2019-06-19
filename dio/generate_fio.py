@@ -19,12 +19,15 @@
 import argparse
 import json
 import os
+import random
 import re
 from abc import ABC
 from collections import OrderedDict
 from configparser import ConfigParser
+from pathlib import Path
+
 import numpy as np
-import random
+
 from dio import defaults
 
 __author__ = 'Sayed Hadi Hashemi'
@@ -220,6 +223,10 @@ class FioDatasetExperiment(FioExperimentBase):
 class ScriptFileBase(ABC):
     def __init__(self, filename):
         self._filename = filename
+        dir_path = Path(os.path.dirname(filename))
+        if not dir_path.exists():
+            dir_path.mkdir(parents=True, exist_ok=True)
+
         with open(self._filename, "w") as fp:
             self._begin(fp)
 
@@ -247,6 +254,43 @@ class RunAllScript(ScriptFileBase):
         fp.write(
             "${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}\n".format(
                 test_file_name=test_file_name, result_file_name=result_file_name))
+
+
+class MPIBootstrapScript(ScriptFileBase):
+    def __init__(self, filename):
+        super().__init__(filename)
+
+    def _begin(self, fp, *args, **kwargs):
+        fp.write("#!/usr/bin/env bash\n")
+
+    def _add_test(self, fp, *, test_file_name, result_path, result_file_name):
+        fp.write(defaults.mpi_bootstrap_script_body.format(
+            test_file_name=test_file_name, result_path=result_path, result_file_name=result_file_name
+        ))
+
+
+class RunMPIScript(ScriptFileBase):
+    def __init__(self, filename):
+        super().__init__(filename)
+
+    def _begin(self, fp, *args, **kwargs):
+        fp.write("#!/usr/bin/env bash\n")
+        fp.write("SCRIPT=`realpath $0`\n")
+        fp.write("SCRIPTPATH=`dirname $SCRIPT`\n")
+
+    def _add_test(self, fp, *, test_name, test_file_name, result_path, result_file_name):
+        fp.write("echo\necho Running {}\n".format(test_name))
+        test_bootstrap_path = "mpi_bootstraps/" + test_name + ".bash"
+
+        test_bootstrap_script = MPIBootstrapScript(
+            os.path.join(os.path.dirname(self._filename), test_bootstrap_path))
+
+        test_bootstrap_script.add_test(test_file_name=test_file_name,
+                                       result_path=result_path,
+                                       result_file_name=result_file_name)
+
+        fp.write("${{MPIRUN:=mpirun}} ${{MPI_ARGS}} ${{SCRIPTPATH}}/{test_bootstrap_path}\n".format(
+            test_bootstrap_path=test_bootstrap_path))
 
 
 def parse_args():
@@ -303,7 +347,7 @@ def parse_args():
 
 if __name__ == '__main__':
     parse_args()
-    scripts = [RunAllScript(defaults.run_all_script_path)]
+    scripts = [RunAllScript(defaults.run_all_script_path), RunMPIScript(defaults.run_mpi_script_path)]
     FioGeneralExperiment(run_scripts=scripts).generate_experiment()
     for dataset in FioDatasetExperiment.list_datasets():
         FioDatasetExperiment(dataset_name=dataset, run_scripts=scripts).generate_experiment()
