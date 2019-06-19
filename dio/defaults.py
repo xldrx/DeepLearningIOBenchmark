@@ -53,3 +53,9 @@ mkdir -p ${{OUTPUT_PATH}}
 ${{FIO:=fio}} --output-format=json --output=${{OUTPUT_PATH}} {test_file_name}
 """
 
+run_all_script_body = """
+echo
+echo Running {test_name}
+mkdir -p {result_path}
+${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}
+"""

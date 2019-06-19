@@ -249,12 +249,9 @@ class RunAllScript(ScriptFileBase):
         fp.write("#!/usr/bin/env bash\n")
 
     def _add_test(self, fp, *, test_name, test_file_name, result_path, result_file_name):
-        fp.write("echo\necho Running {}\n".format(test_name))
-        fp.write("mkdir -p {}\n".format(result_path))
-        fp.write(
-            "${{FIO:=fio}} --output-format=json --output={result_file_name} {test_file_name}\n".format(
-                test_file_name=test_file_name, result_file_name=result_file_name))
-
+        fp.write(defaults.run_all_script_body.format(
+            test_name=test_name, test_file_name=test_file_name, result_path=result_path,
+            result_file_name=result_file_name))
 
 class MPIBootstrapScript(ScriptFileBase):
     def __init__(self, filename):
