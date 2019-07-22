@@ -131,8 +131,14 @@ class FioGeneralExperiment(FioExperimentBase):
             name = "{}/general".format(api)
             run = FioRun(name=name)
 
+            is_direct = api == "async" or api == "sync-direct"
+
             for size in defaults.sizes:
+                if is_direct:
+                    size = max(math.ceil(size / defaults.size_align) * defaults.size_align, defaults.size_align)
+
                 for depth in defaults.depths:
+
                     run.add("{api}-d{depth}-s{size}".format(api=api, depth=depth, size=size),
                             api=api,
                             depth=depth,

@@ -12,7 +12,7 @@ disk_util=1
 bssplit=128k/1
 rw=randread
 
-[sync-direct-d1-s256]
+[sync-direct-d1-s512]
 stonewall
 ioengine=sync
 group_reporting=1
@@ -20,11 +20,11 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=256/1
+bssplit=512/1
 blockalign=512
 offset_align=512
 
-[sync-direct-d2-s256]
+[sync-direct-d2-s512]
 stonewall
 ioengine=sync
 group_reporting=1
@@ -32,11 +32,11 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=256/1
+bssplit=512/1
 blockalign=512
 offset_align=512
 
-[sync-direct-d8-s256]
+[sync-direct-d8-s512]
 stonewall
 ioengine=sync
 group_reporting=1
@@ -44,11 +44,11 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=256/1
+bssplit=512/1
 blockalign=512
 offset_align=512
 
-[sync-direct-d32-s256]
+[sync-direct-d32-s512]
 stonewall
 ioengine=sync
 group_reporting=1
@@ -56,11 +56,11 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=256/1
+bssplit=512/1
 blockalign=512
 offset_align=512
 
-[sync-direct-d128-s256]
+[sync-direct-d128-s512]
 stonewall
 ioengine=sync
 group_reporting=1
@@ -68,7 +68,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=256/1
+bssplit=512/1
 blockalign=512
 offset_align=512
 
