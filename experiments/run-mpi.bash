@@ -76,3 +76,48 @@ ${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async-indirect/b
 echo
 echo Running sync/imagenet
 ${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync/imagenet.bash
+echo
+echo Running async/imagenet
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async/imagenet.bash
+echo
+echo Running sync-direct/imagenet
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync-direct/imagenet.bash
+echo
+echo Running async-indirect/imagenet
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async-indirect/imagenet.bash
+echo
+echo Running sync/COCO
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync/COCO.bash
+echo
+echo Running async/COCO
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async/COCO.bash
+echo
+echo Running sync-direct/COCO
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync-direct/COCO.bash
+echo
+echo Running async-indirect/COCO
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async-indirect/COCO.bash
+echo
+echo Running sync/AirFreight
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync/AirFreight.bash
+echo
+echo Running async/AirFreight
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async/AirFreight.bash
+echo
+echo Running sync-direct/AirFreight
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync-direct/AirFreight.bash
+echo
+echo Running async-indirect/AirFreight
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async-indirect/AirFreight.bash
+echo
+echo Running sync/flickr8k
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync/flickr8k.bash
+echo
+echo Running async/flickr8k
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async/flickr8k.bash
+echo
+echo Running sync-direct/flickr8k
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync-direct/flickr8k.bash
+echo
+echo Running async-indirect/flickr8k
+${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async-indirect/flickr8k.bash

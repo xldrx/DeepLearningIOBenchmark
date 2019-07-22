@@ -124,3 +124,78 @@ echo
 echo Running sync/imagenet
 mkdir -p results/sync
 ${FIO:=fio} --output-format=json --output=results/sync/imagenet.json experiments/sync/imagenet.fio
+
+echo
+echo Running async/imagenet
+mkdir -p results/async
+${FIO:=fio} --output-format=json --output=results/async/imagenet.json experiments/async/imagenet.fio
+
+echo
+echo Running sync-direct/imagenet
+mkdir -p results/sync-direct
+${FIO:=fio} --output-format=json --output=results/sync-direct/imagenet.json experiments/sync-direct/imagenet.fio
+
+echo
+echo Running async-indirect/imagenet
+mkdir -p results/async-indirect
+${FIO:=fio} --output-format=json --output=results/async-indirect/imagenet.json experiments/async-indirect/imagenet.fio
+
+echo
+echo Running sync/COCO
+mkdir -p results/sync
+${FIO:=fio} --output-format=json --output=results/sync/COCO.json experiments/sync/COCO.fio
+
+echo
+echo Running async/COCO
+mkdir -p results/async
+${FIO:=fio} --output-format=json --output=results/async/COCO.json experiments/async/COCO.fio
+
+echo
+echo Running sync-direct/COCO
+mkdir -p results/sync-direct
+${FIO:=fio} --output-format=json --output=results/sync-direct/COCO.json experiments/sync-direct/COCO.fio
+
+echo
+echo Running async-indirect/COCO
+mkdir -p results/async-indirect
+${FIO:=fio} --output-format=json --output=results/async-indirect/COCO.json experiments/async-indirect/COCO.fio
+
+echo
+echo Running sync/AirFreight
+mkdir -p results/sync
+${FIO:=fio} --output-format=json --output=results/sync/AirFreight.json experiments/sync/AirFreight.fio
+
+echo
+echo Running async/AirFreight
+mkdir -p results/async
+${FIO:=fio} --output-format=json --output=results/async/AirFreight.json experiments/async/AirFreight.fio
+
+echo
+echo Running sync-direct/AirFreight
+mkdir -p results/sync-direct
+${FIO:=fio} --output-format=json --output=results/sync-direct/AirFreight.json experiments/sync-direct/AirFreight.fio
+
+echo
+echo Running async-indirect/AirFreight
+mkdir -p results/async-indirect
+${FIO:=fio} --output-format=json --output=results/async-indirect/AirFreight.json experiments/async-indirect/AirFreight.fio
+
+echo
+echo Running sync/flickr8k
+mkdir -p results/sync
+${FIO:=fio} --output-format=json --output=results/sync/flickr8k.json experiments/sync/flickr8k.fio
+
+echo
+echo Running async/flickr8k
+mkdir -p results/async
+${FIO:=fio} --output-format=json --output=results/async/flickr8k.json experiments/async/flickr8k.fio
+
+echo
+echo Running sync-direct/flickr8k
+mkdir -p results/sync-direct
+${FIO:=fio} --output-format=json --output=results/sync-direct/flickr8k.json experiments/sync-direct/flickr8k.fio
+
+echo
+echo Running async-indirect/flickr8k
+mkdir -p results/async-indirect
+${FIO:=fio} --output-format=json --output=results/async-indirect/flickr8k.json experiments/async-indirect/flickr8k.fio
