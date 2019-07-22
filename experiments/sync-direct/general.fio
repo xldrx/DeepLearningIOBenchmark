@@ -21,6 +21,8 @@ norandommap=1
 numjobs=1
 direct=1
 bssplit=256/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d2-s256]
 stonewall
@@ -31,6 +33,8 @@ norandommap=1
 numjobs=2
 direct=1
 bssplit=256/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d8-s256]
 stonewall
@@ -41,6 +45,8 @@ norandommap=1
 numjobs=8
 direct=1
 bssplit=256/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d32-s256]
 stonewall
@@ -51,6 +57,8 @@ norandommap=1
 numjobs=32
 direct=1
 bssplit=256/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d128-s256]
 stonewall
@@ -61,6 +69,8 @@ norandommap=1
 numjobs=128
 direct=1
 bssplit=256/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d1-s1024]
 stonewall
@@ -71,6 +81,8 @@ norandommap=1
 numjobs=1
 direct=1
 bssplit=1024/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d2-s1024]
 stonewall
@@ -81,6 +93,8 @@ norandommap=1
 numjobs=2
 direct=1
 bssplit=1024/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d8-s1024]
 stonewall
@@ -91,6 +105,8 @@ norandommap=1
 numjobs=8
 direct=1
 bssplit=1024/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d32-s1024]
 stonewall
@@ -101,6 +117,8 @@ norandommap=1
 numjobs=32
 direct=1
 bssplit=1024/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d128-s1024]
 stonewall
@@ -111,6 +129,8 @@ norandommap=1
 numjobs=128
 direct=1
 bssplit=1024/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d1-s4096]
 stonewall
@@ -121,6 +141,8 @@ norandommap=1
 numjobs=1
 direct=1
 bssplit=4096/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d2-s4096]
 stonewall
@@ -131,6 +153,8 @@ norandommap=1
 numjobs=2
 direct=1
 bssplit=4096/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d8-s4096]
 stonewall
@@ -141,6 +165,8 @@ norandommap=1
 numjobs=8
 direct=1
 bssplit=4096/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d32-s4096]
 stonewall
@@ -151,6 +177,8 @@ norandommap=1
 numjobs=32
 direct=1
 bssplit=4096/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d128-s4096]
 stonewall
@@ -161,6 +189,8 @@ norandommap=1
 numjobs=128
 direct=1
 bssplit=4096/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d1-s32768]
 stonewall
@@ -171,6 +201,8 @@ norandommap=1
 numjobs=1
 direct=1
 bssplit=32768/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d2-s32768]
 stonewall
@@ -181,6 +213,8 @@ norandommap=1
 numjobs=2
 direct=1
 bssplit=32768/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d8-s32768]
 stonewall
@@ -191,6 +225,8 @@ norandommap=1
 numjobs=8
 direct=1
 bssplit=32768/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d32-s32768]
 stonewall
@@ -201,6 +237,8 @@ norandommap=1
 numjobs=32
 direct=1
 bssplit=32768/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d128-s32768]
 stonewall
@@ -211,6 +249,8 @@ norandommap=1
 numjobs=128
 direct=1
 bssplit=32768/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d1-s262144]
 stonewall
@@ -221,6 +261,8 @@ norandommap=1
 numjobs=1
 direct=1
 bssplit=262144/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d2-s262144]
 stonewall
@@ -231,6 +273,8 @@ norandommap=1
 numjobs=2
 direct=1
 bssplit=262144/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d8-s262144]
 stonewall
@@ -241,6 +285,8 @@ norandommap=1
 numjobs=8
 direct=1
 bssplit=262144/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d32-s262144]
 stonewall
@@ -251,6 +297,8 @@ norandommap=1
 numjobs=32
 direct=1
 bssplit=262144/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d128-s262144]
 stonewall
@@ -261,6 +309,8 @@ norandommap=1
 numjobs=128
 direct=1
 bssplit=262144/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d1-s4294967296]
 stonewall
@@ -271,6 +321,8 @@ norandommap=1
 numjobs=1
 direct=1
 bssplit=4294967296/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d2-s4294967296]
 stonewall
@@ -281,6 +333,8 @@ norandommap=1
 numjobs=2
 direct=1
 bssplit=4294967296/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d8-s4294967296]
 stonewall
@@ -291,6 +345,8 @@ norandommap=1
 numjobs=8
 direct=1
 bssplit=4294967296/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d32-s4294967296]
 stonewall
@@ -301,6 +357,8 @@ norandommap=1
 numjobs=32
 direct=1
 bssplit=4294967296/1
+blockalign=512
+offset_align=512
 
 [sync-direct-d128-s4294967296]
 stonewall
@@ -311,4 +369,6 @@ norandommap=1
 numjobs=128
 direct=1
 bssplit=4294967296/1
+blockalign=512
+offset_align=512
 

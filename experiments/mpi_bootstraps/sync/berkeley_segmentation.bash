@@ -7,6 +7,6 @@ export OUTPUT_FILE=results/sync/berkeley_segmentation.json.r${OMPI_COMM_WORLD_RA
 mkdir -p ${DEVICE}
 mkdir -p ${OUTPUT_PATH}
 
-echo 	Running sync/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
+echo ----Running sync/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
 ${FIO:=fio} --output-format=json --output=${OUTPUT_FILE} experiments/sync/berkeley_segmentation.fio
-echo 	Done sync/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
+echo ----Done sync/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]

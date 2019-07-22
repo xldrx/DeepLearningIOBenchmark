@@ -7,6 +7,6 @@ export OUTPUT_FILE=results/async/berkeley_segmentation.json.r${OMPI_COMM_WORLD_R
 mkdir -p ${DEVICE}
 mkdir -p ${OUTPUT_PATH}
 
-echo 	Running async/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
+echo ----Running async/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
 ${FIO:=fio} --output-format=json --output=${OUTPUT_FILE} experiments/async/berkeley_segmentation.fio
-echo 	Done async/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
+echo ----Done async/berkeley_segmentation[r${OMPI_COMM_WORLD_RANK}]
