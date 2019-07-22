@@ -31,11 +31,23 @@ sync_configurations = {
 async_configurations = {
     "ioengine": "libaio",
     "direct": 1,
-    "iodepth": 1
+    "iodepth": 1,
 }
 
-depths = [1, 8, 32, 128]
+direct_configurations = {
+    "blockalign": 512,
+    "offset_align": 512,
+    "direct": 1
+}
+
+indirect_configurations = {
+    "direct": 0
+}
+
+depths = [1, 8, 16, 32, 128]
 sizes = [64, 256, 1024, 4096, 32768, 262144, 2 ** 32]
+size_align = 512
+
 apis = ["sync", "async", "sync-direct", "async-indirect"]
 
 sequence_sizes = [1, 32, 256]

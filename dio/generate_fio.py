@@ -18,6 +18,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import argparse
 import json
+import math
 import os
 import random
 import re
@@ -92,17 +93,18 @@ class FioRun(FioRunBase):
         self.add_test(name, stonewall, **experiment)
 
     def add(self, name, api, stonewall=True, depth=1, **kwargs):
-        if api == "sync":
-            kwargs["direct"] = 0
+        if api == "sync-direct" or api == "async":
+            kwargs.update(defaults.direct_configurations)
+            kwargs["blockalign"] = defaults.size_align
+            kwargs["offset_align"] = defaults.size_align
+        elif api == "sync" or api == "async-indirect":
+            kwargs.update(defaults.indirect_configurations)
+        else:
+            raise AttributeError("Unknown API")
+
+        if api == "sync" or api == "sync-direct":
             return self._add_sync(name, stonewall, depth, **kwargs)
-        elif api == "sync-direct":
-            kwargs["direct"] = 1
-            return self._add_sync(name, stonewall, depth, **kwargs)
-        elif api == "async":
-            kwargs["direct"] = 1
-            return self._add_async(name, stonewall, depth, **kwargs)
-        elif api == "async-indirect":
-            kwargs["direct"] = 0
+        elif api == "async-indirect" or api == "async":
             return self._add_async(name, stonewall, depth, **kwargs)
         else:
             raise Exception("API is not found: {}".format(api))
@@ -182,9 +184,15 @@ class FioDatasetExperiment(FioExperimentBase):
         return ret
 
     @staticmethod
-    def get_bssplit(dataset_mix):
+    def get_bssplit(dataset_mix, align=False):
+        def fix(size):
+            if not align:
+                return size
+            else:
+                return max(math.ceil(size / defaults.size_align) * defaults.size_align, defaults.size_align)
+
         total = sum([d[1] for d in dataset_mix])
-        pairs = ["{size}/{probability}".format(size=size, probability=int(probability * 100 / total))
+        pairs = ["{size}/{probability}".format(size=fix(size), probability=int(probability * 100 / total))
                  for size, probability in dataset_mix]
         ret = ":".join(pairs)
         return ret
@@ -199,11 +207,14 @@ class FioDatasetExperiment(FioExperimentBase):
                 mix = self.get_dataset_mix(sequence_size)
                 for mix_name, dist in mix.items():
                     for depth in defaults.depths:
+                        is_direct = api == "sync-direct" or api == "async"
+                        bssplit = self.get_bssplit(dist, is_direct)
+
                         run.add("{api}-{mix}-s{sequence_size}-d{depth}".format(
                             mix=mix_name, api=api, depth=depth, sequence_size=sequence_size),
                             api=api,
                             depth=depth,
-                            bssplit=self.get_bssplit(dist)
+                            bssplit=bssplit
                         )
             run.generate_config_file(self.run_scripts)
             print(run.name)
@@ -338,6 +349,14 @@ def parse_args():
         required=False
     )
 
+    parser.add_argument(
+        "--size_align",
+        type=int,
+        help="All read sizes in direct I/O will be rounded to this value",
+        default=512,
+        required=False
+    )
+
     FLAGS, unparsed = parser.parse_known_args()
 
     if unparsed:
@@ -349,6 +368,7 @@ def parse_args():
     defaults.sizes = FLAGS.sizes
     defaults.sequence_sizes = FLAGS.seqs
     defaults.apis = FLAGS.apis
+    defaults.size_align = FLAGS.size_align
 
 
 def main():
