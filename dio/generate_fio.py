@@ -211,6 +211,11 @@ class FioDatasetExperiment(FioExperimentBase):
 
             for sequence_size in defaults.sequence_sizes:
                 mix = self.get_dataset_mix(sequence_size)
+                max_size = max([size for test in mix.values() for size, _ in test])
+                if max_size > defaults.max_size:
+                    print("Ignoring {name} with {sequence_size} sequence size. The read size {max_size} is higher "
+                          "than {default_size}.".format(name=name, sequence_size=sequence_size, max_size=max_size,
+                                                        default_size=defaults.max_size))
                 for mix_name, dist in mix.items():
                     for depth in defaults.depths:
                         is_direct = api == "sync-direct" or api == "async"

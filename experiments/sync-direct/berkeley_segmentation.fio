@@ -140,7 +140,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=580096/14:2237440/14:2323456/28:2352128/28:2380288/14
+bssplit=672256/14:2192384/14:2219520/14:2355200/42:2382336/14
 blockalign=512
 offset_align=512
 
@@ -152,7 +152,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=580096/14:2237440/14:2323456/28:2352128/28:2380288/14
+bssplit=672256/14:2192384/14:2219520/14:2355200/42:2382336/14
 blockalign=512
 offset_align=512
 
@@ -164,7 +164,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=580096/14:2237440/14:2323456/28:2352128/28:2380288/14
+bssplit=672256/14:2192384/14:2219520/14:2355200/42:2382336/14
 blockalign=512
 offset_align=512
 
@@ -176,7 +176,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=580096/14:2237440/14:2323456/28:2352128/28:2380288/14
+bssplit=672256/14:2192384/14:2219520/14:2355200/42:2382336/14
 blockalign=512
 offset_align=512
 
@@ -188,7 +188,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=580096/14:2237440/14:2323456/28:2352128/28:2380288/14
+bssplit=672256/14:2192384/14:2219520/14:2355200/42:2382336/14
 blockalign=512
 offset_align=512
 
@@ -200,7 +200,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=351744/24:2403840/24:2471424/50
+bssplit=305152/25:2383360/25:2455040/25:2562560/25
 blockalign=512
 offset_align=512
 
@@ -212,7 +212,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=351744/24:2403840/24:2471424/50
+bssplit=305152/25:2383360/25:2455040/25:2562560/25
 blockalign=512
 offset_align=512
 
@@ -224,7 +224,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=351744/24:2403840/24:2471424/50
+bssplit=305152/25:2383360/25:2455040/25:2562560/25
 blockalign=512
 offset_align=512
 
@@ -236,7 +236,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=351744/24:2403840/24:2471424/50
+bssplit=305152/25:2383360/25:2455040/25:2562560/25
 blockalign=512
 offset_align=512
 
@@ -248,7 +248,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=351744/24:2403840/24:2471424/50
+bssplit=305152/25:2383360/25:2455040/25:2562560/25
 blockalign=512
 offset_align=512
 

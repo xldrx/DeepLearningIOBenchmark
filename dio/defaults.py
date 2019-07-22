@@ -47,6 +47,7 @@ indirect_configurations = {
 depths = [1, 8, 16, 32, 128]
 sizes = [64, 256, 1024, 4096, 32768, 262144, 2 ** 32]
 size_align = 512
+max_size = 2**34
 
 apis = ["sync", "async", "sync-direct", "async-indirect"]
 
