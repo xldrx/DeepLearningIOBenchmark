@@ -107,7 +107,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
-bssplit=608256/14:2250240/14:2278912/28:2307584/14:2394112/14:2422784/14
+bssplit=603136/14:2280960/28:2309120/14:2337280/14:2364928/28
 blockalign=512
 offset_align=512
 
@@ -116,7 +116,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=2
-bssplit=608256/14:2250240/14:2278912/28:2307584/14:2394112/14:2422784/14
+bssplit=603136/14:2280960/28:2309120/14:2337280/14:2364928/28
 blockalign=512
 offset_align=512
 
@@ -125,7 +125,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=8
-bssplit=608256/14:2250240/14:2278912/28:2307584/14:2394112/14:2422784/14
+bssplit=603136/14:2280960/28:2309120/14:2337280/14:2364928/28
 blockalign=512
 offset_align=512
 
@@ -134,7 +134,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=32
-bssplit=608256/14:2250240/14:2278912/28:2307584/14:2394112/14:2422784/14
+bssplit=603136/14:2280960/28:2309120/14:2337280/14:2364928/28
 blockalign=512
 offset_align=512
 
@@ -143,7 +143,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=128
-bssplit=608256/14:2250240/14:2278912/28:2307584/14:2394112/14:2422784/14
+bssplit=603136/14:2280960/28:2309120/14:2337280/14:2364928/28
 blockalign=512
 offset_align=512
 
@@ -152,7 +152,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=1
-bssplit=272896/24:2448384/24:2483712/50
+bssplit=293376/24:2418688/24:2488320/50
 blockalign=512
 offset_align=512
 
@@ -161,7 +161,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=2
-bssplit=272896/24:2448384/24:2483712/50
+bssplit=293376/24:2418688/24:2488320/50
 blockalign=512
 offset_align=512
 
@@ -170,7 +170,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=8
-bssplit=272896/24:2448384/24:2483712/50
+bssplit=293376/24:2418688/24:2488320/50
 blockalign=512
 offset_align=512
 
@@ -179,7 +179,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=32
-bssplit=272896/24:2448384/24:2483712/50
+bssplit=293376/24:2418688/24:2488320/50
 blockalign=512
 offset_align=512
 
@@ -188,7 +188,7 @@ stonewall
 ioengine=libaio
 direct=1
 iodepth=128
-bssplit=272896/24:2448384/24:2483712/50
+bssplit=293376/24:2418688/24:2488320/50
 blockalign=512
 offset_align=512
 

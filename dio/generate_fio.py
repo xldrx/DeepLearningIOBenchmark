@@ -138,7 +138,6 @@ class FioGeneralExperiment(FioExperimentBase):
                     size = max(math.ceil(size / defaults.size_align) * defaults.size_align, defaults.size_align)
 
                 for depth in defaults.depths:
-
                     run.add("{api}-d{depth}-s{size}".format(api=api, depth=depth, size=size),
                             api=api,
                             depth=depth,
@@ -207,15 +206,17 @@ class FioDatasetExperiment(FioExperimentBase):
         runs = []
         for api in defaults.apis:
             name = "{}/{}".format(api, self.dataset_name)
+            print("::: {}".format(name))
+
             run = FioRun(name=name)
 
             for sequence_size in defaults.sequence_sizes:
                 mix = self.get_dataset_mix(sequence_size)
                 max_size = max([size for test in mix.values() for size, _ in test])
                 if max_size > defaults.max_size:
-                    print("Ignoring {name} with {sequence_size} sequence size. The read size {max_size} is higher "
-                          "than {default_size}.".format(name=name, sequence_size=sequence_size, max_size=max_size,
-                                                        default_size=defaults.max_size))
+                    print("Ignoring {name} with {sequence_size} sequence size. The read size {max_size} exceeds the "
+                          "limit ({default_size}).\n".format(name=name, sequence_size=sequence_size, max_size=max_size,
+                                                           default_size=defaults.max_size))
                 for mix_name, dist in mix.items():
                     for depth in defaults.depths:
                         is_direct = api == "sync-direct" or api == "async"
@@ -228,7 +229,6 @@ class FioDatasetExperiment(FioExperimentBase):
                             bssplit=bssplit
                         )
             run.generate_config_file(self.run_scripts)
-            print(run.name)
             runs.append(run)
 
     @staticmethod

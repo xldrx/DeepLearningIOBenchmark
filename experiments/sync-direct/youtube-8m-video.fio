@@ -200,7 +200,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=43300864/11:43928576/36:44556288/43:45184000/8
+bssplit=43338240/9:43959296/47:44580352/36:45201408/7
 blockalign=512
 offset_align=512
 
@@ -212,7 +212,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=43300864/11:43928576/36:44556288/43:45184000/8
+bssplit=43338240/9:43959296/47:44580352/36:45201408/7
 blockalign=512
 offset_align=512
 
@@ -224,7 +224,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=43300864/11:43928576/36:44556288/43:45184000/8
+bssplit=43338240/9:43959296/47:44580352/36:45201408/7
 blockalign=512
 offset_align=512
 
@@ -236,7 +236,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=43300864/11:43928576/36:44556288/43:45184000/8
+bssplit=43338240/9:43959296/47:44580352/36:45201408/7
 blockalign=512
 offset_align=512
 
@@ -248,7 +248,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=43300864/11:43928576/36:44556288/43:45184000/8
+bssplit=43338240/9:43959296/47:44580352/36:45201408/7
 blockalign=512
 offset_align=512
 
@@ -260,7 +260,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=151350784/45:153462784/54
+bssplit=151032320/26:153149440/73
 blockalign=512
 offset_align=512
 
@@ -272,7 +272,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=151350784/45:153462784/54
+bssplit=151032320/26:153149440/73
 blockalign=512
 offset_align=512
 
@@ -284,7 +284,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=151350784/45:153462784/54
+bssplit=151032320/26:153149440/73
 blockalign=512
 offset_align=512
 
@@ -296,7 +296,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=151350784/45:153462784/54
+bssplit=151032320/26:153149440/73
 blockalign=512
 offset_align=512
 
@@ -308,7 +308,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=151350784/45:153462784/54
+bssplit=151032320/26:153149440/73
 blockalign=512
 offset_align=512
 
@@ -320,7 +320,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=42659840/9:43280384/32:43900416/48:44520448/9
+bssplit=42616832/4:43230208/40:43844096/43:44457472/11
 blockalign=512
 offset_align=512
 
@@ -332,7 +332,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=42659840/9:43280384/32:43900416/48:44520448/9
+bssplit=42616832/4:43230208/40:43844096/43:44457472/11
 blockalign=512
 offset_align=512
 
@@ -344,7 +344,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=42659840/9:43280384/32:43900416/48:44520448/9
+bssplit=42616832/4:43230208/40:43844096/43:44457472/11
 blockalign=512
 offset_align=512
 
@@ -356,7 +356,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=42659840/9:43280384/32:43900416/48:44520448/9
+bssplit=42616832/4:43230208/40:43844096/43:44457472/11
 blockalign=512
 offset_align=512
 
@@ -368,7 +368,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=42659840/9:43280384/32:43900416/48:44520448/9
+bssplit=42616832/4:43230208/40:43844096/43:44457472/11
 blockalign=512
 offset_align=512
 
@@ -380,7 +380,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=7914496/6:353917440/93
+bssplit=8290304/6:353162240/93
 blockalign=512
 offset_align=512
 
@@ -392,7 +392,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=7914496/6:353917440/93
+bssplit=8290304/6:353162240/93
 blockalign=512
 offset_align=512
 
@@ -404,7 +404,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=7914496/6:353917440/93
+bssplit=8290304/6:353162240/93
 blockalign=512
 offset_align=512
 
@@ -416,7 +416,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=7914496/6:353917440/93
+bssplit=8290304/6:353162240/93
 blockalign=512
 offset_align=512
 
@@ -428,7 +428,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=7914496/6:353917440/93
+bssplit=8290304/6:353162240/93
 blockalign=512
 offset_align=512
 
@@ -440,7 +440,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=28613120/6:1214952960/93
+bssplit=28695040/6:1213447680/93
 blockalign=512
 offset_align=512
 
@@ -452,7 +452,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=28613120/6:1214952960/93
+bssplit=28695040/6:1213447680/93
 blockalign=512
 offset_align=512
 
@@ -464,7 +464,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=28613120/6:1214952960/93
+bssplit=28695040/6:1213447680/93
 blockalign=512
 offset_align=512
 
@@ -476,7 +476,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=28613120/6:1214952960/93
+bssplit=28695040/6:1213447680/93
 blockalign=512
 offset_align=512
 
@@ -488,7 +488,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=28613120/6:1214952960/93
+bssplit=28695040/6:1213447680/93
 blockalign=512
 offset_align=512
 
@@ -500,7 +500,7 @@ thread=1
 norandommap=1
 numjobs=1
 direct=1
-bssplit=8199168/6:348533248/93
+bssplit=7949824/6:347764736/93
 blockalign=512
 offset_align=512
 
@@ -512,7 +512,7 @@ thread=1
 norandommap=1
 numjobs=2
 direct=1
-bssplit=8199168/6:348533248/93
+bssplit=7949824/6:347764736/93
 blockalign=512
 offset_align=512
 
@@ -524,7 +524,7 @@ thread=1
 norandommap=1
 numjobs=8
 direct=1
-bssplit=8199168/6:348533248/93
+bssplit=7949824/6:347764736/93
 blockalign=512
 offset_align=512
 
@@ -536,7 +536,7 @@ thread=1
 norandommap=1
 numjobs=32
 direct=1
-bssplit=8199168/6:348533248/93
+bssplit=7949824/6:347764736/93
 blockalign=512
 offset_align=512
 
@@ -548,7 +548,7 @@ thread=1
 norandommap=1
 numjobs=128
 direct=1
-bssplit=8199168/6:348533248/93
+bssplit=7949824/6:347764736/93
 blockalign=512
 offset_align=512
 
