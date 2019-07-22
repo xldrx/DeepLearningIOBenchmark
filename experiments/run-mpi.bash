@@ -76,6 +76,3 @@ ${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async-indirect/b
 echo
 echo Running sync/imagenet
 ${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/sync/imagenet.bash
-echo
-echo Running async/imagenet
-${MPIRUN:=mpirun} ${MPI_ARGS} bash ${SCRIPTPATH}/mpi_bootstraps/async/imagenet.bash

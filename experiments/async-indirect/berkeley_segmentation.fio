@@ -87,70 +87,70 @@ stonewall
 ioengine=libaio
 direct=0
 iodepth=1
-bssplit=632183/14:2109274/14:2256983/28:2375150/14:2404692/14:2493318/14
+bssplit=548592/14:2303777/42:2361324/42
 
 [async-indirect-train-s32-d2]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=2
-bssplit=632183/14:2109274/14:2256983/28:2375150/14:2404692/14:2493318/14
+bssplit=548592/14:2303777/42:2361324/42
 
 [async-indirect-train-s32-d8]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=8
-bssplit=632183/14:2109274/14:2256983/28:2375150/14:2404692/14:2493318/14
+bssplit=548592/14:2303777/42:2361324/42
 
 [async-indirect-train-s32-d32]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=32
-bssplit=632183/14:2109274/14:2256983/28:2375150/14:2404692/14:2493318/14
+bssplit=548592/14:2303777/42:2361324/42
 
 [async-indirect-train-s32-d128]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=128
-bssplit=632183/14:2109274/14:2256983/28:2375150/14:2404692/14:2493318/14
+bssplit=548592/14:2303777/42:2361324/42
 
 [async-indirect-test-s32-d1]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=1
-bssplit=340043/24:2389071/50:2604758/24
+bssplit=324334/25:2407037/25:2476461/25:2511173/25
 
 [async-indirect-test-s32-d2]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=2
-bssplit=340043/24:2389071/50:2604758/24
+bssplit=324334/25:2407037/25:2476461/25:2511173/25
 
 [async-indirect-test-s32-d8]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=8
-bssplit=340043/24:2389071/50:2604758/24
+bssplit=324334/25:2407037/25:2476461/25:2511173/25
 
 [async-indirect-test-s32-d32]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=32
-bssplit=340043/24:2389071/50:2604758/24
+bssplit=324334/25:2407037/25:2476461/25:2511173/25
 
 [async-indirect-test-s32-d128]
 stonewall
 ioengine=libaio
 direct=0
 iodepth=128
-bssplit=340043/24:2389071/50:2604758/24
+bssplit=324334/25:2407037/25:2476461/25:2511173/25
 
 [async-indirect-train-s256-d1]
 stonewall

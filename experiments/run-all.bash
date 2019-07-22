@@ -124,8 +124,3 @@ echo
 echo Running sync/imagenet
 mkdir -p results/sync
 ${FIO:=fio} --output-format=json --output=results/sync/imagenet.json experiments/sync/imagenet.fio
-
-echo
-echo Running async/imagenet
-mkdir -p results/async
-${FIO:=fio} --output-format=json --output=results/async/imagenet.json experiments/async/imagenet.fio

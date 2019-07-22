@@ -129,6 +129,8 @@ class FioGeneralExperiment(FioExperimentBase):
         runs = []
         for api in defaults.apis:
             name = "{}/general".format(api)
+            print(":::", name)
+
             run = FioRun(name=name)
 
             is_direct = api == "async" or api == "sync-direct"
@@ -144,7 +146,6 @@ class FioGeneralExperiment(FioExperimentBase):
                             bssplit="{}/1".format(size)
                             )
             run.generate_config_file(self.run_scripts)
-            print(run.name)
             runs.append(run)
 
 
@@ -161,7 +162,7 @@ class FioDatasetExperiment(FioExperimentBase):
     @staticmethod
     def get_distribution(sizes, sequence_size):
         ret = []
-        random.seed = 42
+        random.seed(42)
         random.shuffle(sizes)
         chunks = []
         for i in range(0, len(sizes), sequence_size):
@@ -194,7 +195,8 @@ class FioDatasetExperiment(FioExperimentBase):
             if not align:
                 return size
             else:
-                return max(math.ceil(size / defaults.size_align) * defaults.size_align, defaults.size_align)
+                aligned_value = max(math.ceil(size / defaults.size_align) * defaults.size_align, defaults.size_align)
+                return aligned_value
 
         total = sum([d[1] for d in dataset_mix])
         pairs = ["{size}/{probability}".format(size=fix(size), probability=int(probability * 100 / total))
@@ -217,6 +219,8 @@ class FioDatasetExperiment(FioExperimentBase):
                     print("Ignoring {name} with {sequence_size} sequence size. The read size {max_size} exceeds the "
                           "limit ({default_size}).\n".format(name=name, sequence_size=sequence_size, max_size=max_size,
                                                            default_size=defaults.max_size))
+                    continue
+
                 for mix_name, dist in mix.items():
                     for depth in defaults.depths:
                         is_direct = api == "sync-direct" or api == "async"
